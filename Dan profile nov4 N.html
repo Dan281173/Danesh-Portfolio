@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Danesh Vishnumurthy</title>
+<meta name="description" content="Danesh Vishnumurthy — Product Design Leader. 26 years building design organizations, design systems and enterprise AI experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: indigo masthead with a woven warp/weft field, then a single editorial column with a to-scale career "thread" and leadership chapters. Roots in textile design drive the motif. */
+:root{
+  --bg:#f5f6f9;
+  --surface:#ffffff;
+  --ink:#141a33;
+  --muted:#575e78;
+  --line:#dde0ea;
+  --indigo:#1f2a63;
+  --indigo-deep:#121a45;
+  --on-indigo:#eef0fa;
+  --on-indigo-muted:#a9b0d6;
+  --marigold:#d98c1a;
+  --marigold-ink:#9a5b00;
+  --violet:#7b3fd1;
+  --violet-ink:#6a2fc0;
+  --display:"Gloock", "Georgia", "Times New Roman", serif;
+  --body:"Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1124; --surface:#151a33; --ink:#e8eaf6; --muted:#9aa1c2; --line:#272d4d;
+    --indigo:#1a2356; --indigo-deep:#0a0e22; --on-indigo:#eef0fa; --on-indigo-muted:#a9b0d6;
+    --marigold:#f0a73a; --marigold-ink:#f0a73a; --violet:#9d6bf0; --violet-ink:#b892ff; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1124; --surface:#151a33; --ink:#e8eaf6; --muted:#9aa1c2; --line:#272d4d;
+  --indigo:#1a2356; --indigo-deep:#0a0e22; --on-indigo:#eef0fa; --on-indigo-muted:#a9b0d6;
+  --marigold:#f0a73a; --marigold-ink:#f0a73a; --violet:#9d6bf0; --violet-ink:#b892ff; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--marigold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-0.01em}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--marigold-ink)}
+
+/* Masthead */
+.mast{background:var(--indigo-deep);color:var(--on-indigo);position:relative;overflow:hidden}
+.mast::before{content:"";position:absolute;inset:0;opacity:.22;pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 22px, rgba(169,176,214,.35) 22px 23px),
+    repeating-linear-gradient(0deg, transparent 0 22px, rgba(169,176,214,.18) 22px 23px);
+  -webkit-mask-image:linear-gradient(100deg, transparent 30%, #000 85%);mask-image:linear-gradient(100deg, transparent 30%, #000 85%)}
+.mast .wrap{position:relative;padding-block:28px 64px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:64px}
+.mono-mark{font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--on-indigo-muted)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:14px;color:var(--on-indigo-muted);transition:color .2s}
+.nav a:hover{color:var(--on-indigo)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end}
+.hero .eyebrow{color:var(--marigold)}
+.hero h1{font-size:clamp(46px, 8vw, 96px);line-height:.98;margin:0 0 22px}
+.hero h1 span{display:block;color:var(--on-indigo-muted)}
+.hero .role{font-size:clamp(18px,2.1vw,22px);font-weight:500;margin:0 0 14px;max-width:40ch}
+.hero .lede{color:var(--on-indigo-muted);max-width:60ch;margin:0}
+.portrait{width:200px;aspect-ratio:1;max-width:100%;border-radius:50%;object-fit:cover;filter:grayscale(.15) contrast(1.03);
+  box-shadow:0 0 0 6px var(--indigo-deep),0 0 0 7px var(--marigold)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--body);padding:13px 18px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--marigold);color:#1a1205}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:rgba(169,176,214,.45);color:var(--on-indigo);background:transparent}
+.btn-ghost:hover{border-color:var(--on-indigo)}
+
+/* Impact band */
+.impact{background:var(--indigo);color:var(--on-indigo)}
+.impact .wrap{padding-block:36px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--marigold);font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:14px;color:var(--on-indigo-muted);margin-top:10px;line-height:1.4}
+
+/* Sections */
+section.block{padding-block:88px}
+section.block + section.block{border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(32px,4vw,46px);line-height:1.08}
+.sec-head p{color:var(--muted);margin:0;max-width:62ch;align-self:end}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.pillar{background:var(--surface);padding:32px 30px}
+.pillar h3{font-size:25px;margin-bottom:10px}
+.pillar p{margin:0;color:var(--muted)}
+.pillar .proof{margin-top:16px;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--marigold-ink)}
+
+/* Career thread */
+.thread{position:relative;margin-bottom:56px;overflow-x:auto;padding-bottom:6px}
+.thread-inner{min-width:640px;position:relative}
+.track{position:relative;height:46px;border-radius:4px;background:
+  repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 6px);}
+.seg{position:absolute;top:0;height:46px;border-radius:3px;display:flex;align-items:center;padding:0 8px;
+  font-size:12px;font-weight:600;color:var(--on-indigo);background:var(--indigo);white-space:nowrap;overflow:hidden;border:2px solid var(--bg)}
+.seg.now{background:var(--marigold);color:#1a1205}
+.seg.craft{background:var(--violet);color:#fff}
+.role-item.film .title{color:var(--violet-ink)}
+.role-item.film .role-body li::before{background:var(--violet)}
+.tag.film{background:var(--violet);color:#fff}
+.list li.nat b{color:var(--violet-ink)}
+.axis{position:relative;height:28px;font-family:var(--mono);font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.axis span{position:absolute;top:8px;transform:translateX(-50%)}
+.axis span:first-child{transform:none}
+.axis span:last-child{transform:translateX(-100%)}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+
+/* Roles */
+.roles{display:flex;flex-direction:column}
+.role-item{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;padding-block:36px;border-top:1px solid var(--line)}
+.role-item:first-child{border-top:0;padding-top:0}
+.when{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.org{font-family:var(--display);font-size:22px;line-height:1.2;margin:6px 0 4px}
+.title{font-size:15px;color:var(--marigold-ink);font-weight:600}
+.role-body p{margin:0 0 14px;max-width:68ch}
+.role-body ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:68ch}
+.role-body li{position:relative;padding-left:22px;color:var(--muted)}
+.role-body li::before{content:"";position:absolute;left:0;top:.72em;width:12px;height:1px;background:var(--marigold)}
+.role-body li strong{color:var(--ink);font-weight:600}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--marigold);color:#1a1205;margin-left:8px;vertical-align:2px}
+details.more{margin-top:12px}
+details.more summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);list-style:none;display:inline-flex;gap:6px;align-items:center}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+";font-family:var(--mono);color:var(--marigold-ink)}
+details.more[open] summary::after{content:"–"}
+details.more ul{margin-top:12px}
+
+/* Clients */
+.clients{display:flex;flex-wrap:wrap;gap:10px 10px}
+.clients span{font-size:15px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+
+/* Recognition & education */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.list li span:last-child{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right}
+.list li b{font-weight:600}
+.sub{font-family:var(--display);font-size:24px;margin-bottom:12px}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:56px}
+.skills h4{margin:0 0 10px;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--marigold-ink)}
+.skills p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* Beyond */
+.beyond{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.beyond div{border-top:2px solid var(--ink);padding-top:16px}
+.beyond h3{font-size:21px;margin-bottom:6px}
+.beyond p{margin:0;color:var(--muted);font-size:15px}
+
+/* Contact */
+.contact{background:var(--indigo-deep);color:var(--on-indigo)}
+.contact .wrap{padding-block:88px 56px}
+.contact h2{font-size:clamp(36px,5.5vw,64px);line-height:1.04;max-width:16ch;margin-bottom:24px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ccard{border:1px solid rgba(169,176,214,.3);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.ccard small{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-indigo-muted)}
+.ccard .val{font-size:17px;font-weight:600;word-break:break-word;user-select:all}
+.ccard .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.cline{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin:0;font-size:clamp(17px,2vw,21px);font-weight:600}
+.cline .sep{color:var(--on-indigo-muted)}
+@media (max-width:560px){.cline{flex-direction:column;gap:10px}.cline .sep{display:none}}
+.vlink{text-decoration:underline;text-decoration-color:var(--marigold);text-underline-offset:4px;user-select:auto}
+.vlink:hover{color:var(--marigold)}
+.mini{font:600 13px/1 var(--body);padding:9px 12px;border-radius:999px;border:1px solid rgba(169,176,214,.45);background:transparent;color:var(--on-indigo);cursor:pointer;text-decoration:none}
+.mini:hover{border-color:var(--on-indigo)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:72px;padding-top:24px;border-top:1px solid rgba(169,176,214,.2);font-size:13px;color:var(--on-indigo-muted)}
+
+@media (max-width: 860px){
+  .hero{grid-template-columns:1fr;gap:28px}
+  .portrait{width:132px;order:-1}
+  .impact .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .impact .stat:last-child{grid-column:1/-1}
+  .sec-head,.role-item{grid-template-columns:1fr;gap:12px}
+  .pillars,.two,.cards{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr;gap:24px}
+  .beyond{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .beyond div:last-child{grid-column:1/-1}
+  section.block{padding-block:64px}
+  .nav{margin-bottom:40px}
+  .nav ul{gap:16px}
+}
+@media (max-width: 480px){ .beyond{grid-template-columns:1fr} .nav ul{display:none} }
+
+body{margin:0}img{max-width:100%}
+</style>
+</head>
+<body>
+
+<header class="mast" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Sections">
+      <div class="mono-mark">DV · DESIGN LEADERSHIP</div>
+      <ul>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#recognition">Recognition</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div>
+        <h1>Danesh <span>Vishnumurthy</span></h1>
+        <p class="role">Global design leader. Creative at heart, SaaS product enthusiast, problem solver and critical thinker.</p>
+        <p class="lede">For 26 years I have built world-class design teams, scaled design systems and turned complex enterprise problems into SaaS products people trust and enjoy using. I bring a creative eye and a critical thinker’s rigor to every problem, from strategy to the smallest detail. I led special effects on a National Film Award-winning feature, and have led enterprise UX at Satyam, Infosys, Verizon and New Relic.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/danesh-vishnumurthy-6190673/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <img class="portrait" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCAD9AP0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8/wCiiigAooooAKKKKACiiigAooooAKKK19L0e/1vVV0rRdOvr67nOFtLW1M834Ac/lQBkUV7j4U/Zj+LfibF5d6Svhyx8nPn60xgwR/yy8ob5R/wJO1eo6b+w5f3GlQf2/8AEmwstQbzcW1npf2i3GP+m3mx/wDoFAHx7RX3Xb/scfDK30uD+0PEvjG9vnJJa0WC3h/d9f3XlSH9afbfsY/Cy5/5mHxj/wCBcP8A8jUAfCNFfdQ/Yt+Ho+z/APFQ+Lvmn2/8fFvx7j911rK1D9iTRbjTbW9sPiPfWf7jdd/a7P7R/Ly8D6b6APiqivqnW/2JfGcV/t8K+M/Dur23k7jJciW1wPTAD/zrzTxX+z98XfC+px2974QvNVFxPKLW40jN/wDavL4JxFmSMd13ohOenoAeQ0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUV1vg/wP4h8eeJrbw/4csftl3O2Nx4htwT1lk7D60AclXqvw8+CXj/AOJcqPoOmC0sQMf2tqh+zW3SXkE5MmTCU/dh8H72O31T8K/2V/BPgzTLbV/HS6d4v1k3ABzdA2Flx/zxx+9/7af9M/kSvoK2tv8Aj1/5B3/HtB/y9/8ATCgDwPwZ+x78MNGF0PF2p6h4kvrUYz9q+zQY87Hn+TD+96cf6x//AIj3a206x8OeBP7I0DTfsdla+f8AZLOz/wCPf/Pm1N9m/wCJpdf5/wCe1H2b/j6s/wDiXf8ALeue4B9pvv7UuqX/AO3Un+g22qXX/bf/AJ71D9p+zan/APv6DnILnp/3/pKsf8fOl/8Af6tO28Lazc/8w/UP+3y1oA57/n1/6+YaNFtvtPhj/P8AzwrqP+EM1u30zH9m81Dov/Eu+y0AQW2nX39p/wDINotvDl9/0Df8/vq9X+z/AGfTcY0/60tr/wAguugZ4b4p+DPhjxy9zbeK/BOn6u1wci9Fp9muBB/13/1lfP8A43/YMvZ2urz4b6kbU7sjStY/1C/viMifg+WI8EfK75HL191/Z/8AqJVdubag3PxX8b/DHx98NdVGkePfDd9o1yTi3N2P3F0BtJ8mYExy484bij/Lk964Kv3T1jQNF8RaR/YOvaZp+rWly3+lWd9bCe3z/reYZM18OfGT9gk6fpv9u/BjUb2+kE3zeH9U8oOwYnJinJQfJ+6HlydhI2/+AgHwfRWpqWlX+m6hc2N/ZPa3ttN9muLW4z5yy5Ocjr1FZdABRRRQAUUUUAFFFFABRRRQAUUUUAFFFfQPwI/Z/uviXBd+LdeY2nhq1OAF4nv5uf3MXPEXTfJj/YX+N0AKPwa/Z78T/E/7Prt+o0rwalztur7H74jnPkqR9P3h+Qc/fKFK+7fC/gbwz4H8OW+geFrBtJtWuslmOST7mrltbfZtMtbOw037HZWvk2X2Oz8j7P8A6iGr3/yT/wBMKwbuAXP2H+zPtn/TzV22tv8A0mg/5e6xLm2vv7MutI/6ef8An7g/+NVe+0/+k1ICa2tv+Jp/19W1H/Ht9qo077D/AKL/ANOtt/03/wCm1Q/6DbaZ/wB/v+e//PCgaV9EXf8Aj2/8jVS+0/adTrDudR+01DXDiMwPcw2Tf8/z0rRvFeiaMP8An8vam/4WsPQV55bW1Q3NtWH9oVTf+zqR6hbfE6x/5f657xX4jsdargrioftNYf2ib/2NSO107x7renf6J/aX2yui07x7/aP/AMh15R9po+013YfMDhxGXHq9z4jvrb/mJVStvEd9c/8AMSrj9O1r+0f9D/5fa2/9OttL/wCYjXde54WI/cmpbeI765qH/hI765+y/wDEyrEtvt1t9q/+S/8ApvDU/wDx7f6H/wA+v/T3XQc5wvxc+E3g742fZf7bc2OtWtqRZ6vac4yMRQTfuv3sRk/eeX/3w6eY9fnb428F654F8ZXPh/XbA215AxOQCYbqLJxNEcDMZA6/4HH6i/ab7+1P/uv/AK41zvivwFonxF8CXXhzX9N+2WX2b/j8/wCXixn8/wD18P8An/Y+5voGmflcetFek/FD4X+Kfg/45fR9dUNZ3Kl7S/tB+5vYfXPr03R/+ylGPm1BuFFFFABRRRQAUUUUAFFFdt4G8A658QfGdloGg2znz9v2i7KHbZQGURNNKe0YLDP120Aej/s4/BM/FPxwNZ13TyvhDTGzdsnH2ybqIBznvl9n3Ex9wuj197aLbaJbf6HYabp1nZWv+hWlnZ/9MvOqn8PPD9p4G8EW3gjRGLWmmnNqzHJJ/fTZNadt9uttTuv8/wDPagCa5trH+y/+3n/n0ql9psf+PP8A9tP+m9FzqN9/pX/Ey07/AD5NFzbX3/CT2v8A9v8A+e9c4Gpb/wDIT/5iNQW2o/8AUN1H/wABP+mENT3Nz/x6/wDEy/54f896o21tY/6L/wATL/0f/wA8KAL2naj9m/5huo/8e1cvrWtf2jV3Uf8AiXeGP+vqudrysxxPsj3cmw3tf3pPbf6TW3p1tWXbV0VtXlYd3Z9LiDattFqlqNt/xM6vW1zfVlXNzXqnnnPajbVR+z1eubmoK4DoKX2aoKvVBc10I5yCu80XUf7a0v8A6fbWuDrqPAWo/wBneOrX/wAAq9XDHh5jh/am3/Z17U/2a+/6Bteh3Oo2NtqlH/CRaH/0E67zwTzz+zr7/j8/s2su5ub62+1f9e3/AMer0/UfFejXOnm0sdTH2vt615Tc3P2n7V/xLf8Al2/+PUAc/wDELwbYfFT4a3PgbUQbRbq6/wBFuhawD7HN/wAsZv8AOx9nmpv/AHlfm/438CeI/h/41u/DXizS/sN4mWDkfumiOMSxHuDjHr1X73A/Uf8A6fP7M/5ea8k/aF+Da/ErwTc3tnpPmeMdLtx9muc/ZsjvbzH/AJa/8t9n+3/Hs37waZ+cB60UHrRQbhRRRQAUUUUAFff37LHgYeDvhAviG+GNZ8SD7WOcn7PmIw5P4+Z/21+f/V181fs2fDxviX+0NoWiPprXlnaf6bdjMDjEfI86GbiaLzDEjoOqE1+mX/CKa5/0DKAOdtra+udUqHTtOvv+Jr/9vrr/APhHNc/6BlFt4cvrb/mG1znOcTc6d9m+1f8AbH/0RDV25trH+07X/iW/58+uiufCl9/pX/EtrL/49tTtbP8As2gCl/oP/kzR/wA+tH9pWP8ApVTW1z9p0u1/6+f+mH/Tag6Ech4juftOqf8AXrUNtVG5uftNXba2r5zMP4p91lv7qkXra2rUtra+qfTrauvttOpYfDm+IxBxNt9uo/s6+966n7NY1Nc21jXQcB55c219RXRaj9hrK+z1znQZlZVx1rbubasS4610I5yCi2ufs1Q0V0I4cSeoW3+k6X9s/wCfr/rvS/8A2muo8KaLompeBdLu/wC0v+Pq2rUufDmiW1e2j5R7nnlt/n/RKP8AmF/9u3/x6u11rTtE07TP9A1L/Ta5C5+3f9BL/nh/7W/6ZUxC/wDMN/7eaguP+Xr/ALY/+iKg/wBN/wCgl/n/AL9VPc219/al1ef2l/n99/0yoA+JP2rPg4vgzxw/xD0aMy6FrtwPtn+lDIvZfNl/1R/eCKQReYD6hx8g2CvmCv1S8d+BNF+JvhnVPCOuk/Yv+XS8/wCPj7FP5H7mf/ln/q//AB/7lfl9c2V7puoXFpfRtbXcB2z29wMHPpig6DOooooAKKK1tC0O+8Q+J9N8P2ILXuoXMNpbr7yHA/UigD73/ZS8Djwf8EP+EjXK6x4mAvQl5bmELBFNLDFgntx5nmfJ/rRyetfR2neI77/jzridF0XRNF0y18OWGm/Y7K1/0K0/1/8AqP3Nav8AoP8Aan/IN/5dpv8Anv8A/Gq5wOh/4TS+1HS/+YdRbeNL7/qHVyGnfYf7M/78f89//jVT21zZf6V/23/5dP8ApvQc51Fz40vqpXOtf219lrE/0G5/8gf8ulT21z/xTH/IN/8AJSg6BP7S/wCPr/5Lqe2uftP/APF/9dqpfabG20y6/wDkSrttc/8AHr/8if8ATeaga3PNftP2b/j/AK5258e/2d/15Vl+K9a+zanXl/iHWDdsLpQbSzPAu7u6+z5/7+14b/e1T7nDaUT122+L9j/x512Ft49sbmvi65uP+3z/AK87v7TXQ+HPFdGIw/sjfD/vT7EtvEf2n/TKxNR8afZqNF07/ihK8a8e3N9p32qudDZ1HiP40WOnVS0740faf9M/tKvBdRuftNami6LfXP8AzEtOs/8Ar8rvWHPPPpy28aVqXNzY3P8AplhXg1tc634c0v7Zf6bp15ov/P5o939prtfDniOxuf8ATLD/AEyyuqZidtRUNtc1Pc0HPiD0rwXc31z4F/5iP+i1dtra+/0X/iW6jVfwZ8RNE8O+BbXSM6feXv77pXcf8JXff9AzTq9TDHzeJX7w4m2tr62/5hv/AC7VR1H7d/otn/1x/wCXT/rtXQ6z4ivdZ/4//wCzv+Pasv8A065+y/8AbCug5ylbW19/5LQf88Kn/wCJ3/pX/wAl/wDXaprb/kGf8w7/AI9oKX7N9m/tX/P/ALVoAg/4nf8Aan/MR/8AAv8A6YV8Rftf+CH0D43QeLo7ArZ+I7bzMYyDcRYhmx748on/AGpDX2tbW3/Hr/xLf+Xn/pv/AM8If+mteZ/tW+FV8Q/s03erNpl99s0S4N5a/ZRn/lt++87jiPypppAfkoGj83z1ooPWig3CvoT9kXwtbeJ/2mNOub5k8vRbWXVyLq1NwGxiINj/AKZyTCX/ALZGvnuvt39gu3tdPTxx4h1Hw8bsT/ZLKz1MWmMZ83zoYpsdf3sG+Mf9Mv8AYoA+o7a2/wCJpR/oP9p/Y/8AiXf/AL3/ALa11P8AwkeiXP8Aof8AZlQf8IXff2p9s/8Abuuc5zl/s32b/oHf+R6La2sbbU/8/wDLWuo/4Qu+/wA3dZdzp19ov/H/AP8APtQBR/0H/wABaLn7D/x5/wDXGi31H/j6s6P+nygCf/Qbj7VZ1yHivxX/AGLqmgWdh/zFLmey/wDa3/kTzq6j7TfXOqVyHivTvtP9lf8ATrqU97/36grHEfwj0Mu/inzj8RbbW9R1T7HYf8/NcXrHgZ5/C1tdLp7Xes2//H6Ls/aJzX0Zc+FL7Uf+PD/j9/5/K5DUfh18RLnVP9A03w7ef9/7avJw+IPuLUrHifh3wXff6Xd6/p32MfZv9E/1H2ip7bwpff8AHn/Zle16L8F/G+P+J/qWnWdl/wA+ej//AB6u90XwXomi6pa2dhpv/HrRicRcxw+H9keiadp39neBbWvnjx7p39tV9M6yPs3gjTLT186vI9R07/iaXVYfwhJ+2Pl3/hFL651P7H/y5UeM/Ba3AtrvwkNPz9m/0qzz/pFfSmo/CjRNaridR+C/je2/48NS068/6/LSu76wYWPLvCnhzW9N0z7Zp/8Aoetf8+f/AC7/APbaui8OaLfW2p3V5/x5/av+Puz/AOPm3/7Y+TXX23gLxvbf8f8AqWnf9udpW3p3hy+/5f6PrBj9X9kXdFrcubf/AIldQW1t9m/6fKn1rUf7O+GOv6x/z621FA58QeaePdO1u28MWt5oGpfY7L7T/wAudfZXhvWda1DwNoN5/wAI19szp0Br410XWr7xX8Mbr/n9+zV9b+Atasf+FY6B9v1PUf8Aj2rfL/4pz5wv3VMNaub651T/AE/Tfsf+jVR/07/oG1PqNzY3Oqf6B/x5f9PlZdtc32o/8wyvWPmzUqD7Tfe3/gXVG4+3f2Z/yDf/AEfS/Zr7+1P+Qb/6P/8AjtAE1zc/8TO1/wCQd/nzv/jNQ61bWWtaZqnhzXv+PLU7aayu/wDS/wDlhLUH2a+/sv7Zf6b9j+y/9d/+eH/XX/ptNV22+3f6L/17f9N//jtAH5H6haXunapc2d/G8F3BMVnB6g5rPr1b4+aA/hz9pfxlpbzy3A/tE3ga4Ubv9I/fju+f9d1z833q8poOgK/Qv9jfw3dJ+zTqWrXe60F3rM5tc2sx+1QiGICWE9/3kE0eR/01r89K/Sr9l22+0fsf+DR73v8A6XTUAerW2nX39l/9/wD/AD/ran+063bfZbP+0v8AP/f2oPs3/Lp/7aUf2d/x6/8AyJXOBeuft1QfZ6gtra+qf7Nfe9BzlL+zr62+1f8AyJ/12/6a1N9m/wCJX/yDavfab65+1VB/pv8An/ttXQBStvt39p3X/Et/z5Fc7rX/ACDLX7f/AM/M/wD7R/65119t9uttT/5CX+fIrkPFf2638MfbP7S+2fZbmuHE/wAKZ35d/vUA02u2077F/ZleGf8ACR0aj49+zV819YP0H6seseI9asbb/Q6o6dbV55oviP8As7/io9QrEtvjhY6jqd1Z2H/yPR/FN8Phz6G1nWbHUdNtrT/n2rzzxHp32bVP9Arzz/hYtZenfHnwt/af2S/1L/l5ro/inD9XVE9e07Wv7O/4/wD/AEOuo/tH7TXl2peI7LxH9l+wf8eVchqPiO+8Of8AT5ZUjA9z+02NzVHUbaxrxrTviLXRW3iv7TXQGIw5t6lR9m/4pi6rE/tH7TXRajbfZvhjdf8AP7dVtQ2PKrnkHhTTrG2+1fYP+PL7TNX034dtvs3gXQP+vavGtF0X/iWWukV7n9m/4lldOXnn8QYj+GUv7O/4mn/IS/54f8vc9UdF0X7Npn/IS/5ef+fue4/5YQ1qfZrG50usvTtF/wCJXdf8hH/j5/8AjNeqfOF6207/AIllr/xMv+eP+f8AW1dttO/4mf2z/wBtP+mFc7bW1jbaXa2f/Ex/49v/AGhV62trG21O6/7b/wDtGgCD/hHP+KYurP8A9xP/AFx/+M1qfZvs+qWtn/07f9An/phXL/ZtEtvDGqWf9m6j9i+0/wDPp/03hrU+02P/AAk//bzDQB8Vftm6ebb9oXTrsFALzRILog2v2dv9fNF+9Hr8v/fOK+aK+mP21bj7R8eNHb/qXYP/AEfdV8z0HcFfpz+yLPZT/sg+FwdQN19mub03Sn/lxBnlI/T95X5jV+gf7Dl3an9n/X7J7+y+2/8ACQyEWrf8fGPs8OB1zhwJfwikoA+krm2+zanU32eqX2ax/tSp/s1jXOc4lUrir1tbWNUdR07/AImlAF7+0v8Aj6/69qyvtP8Ax9Xn9m1epLnpdV0AL/zE/wD9x/zwrkPFdt9p8C6r9g037H/o3/xmu2/0H3rKubbRLnTLr/r2/wDjNc+J/hHRhn7Krc+UNRub6uo8F/CjW/Ff+mf2l/oX2b/PnVe/4RT/AIqf+yP+fq5r1HxH4jsfDn2XwhYf8utt/wCR68PD4Y+6xGYfuv3Bl618Ov8AimLrSLD/AJ9q8g1H4L63baZ/yEv/AN//ANMa9Kufid/x9Wf/AD6/8ff+f+/NHiPxXff2Z9s/5+rmf/TK3+r0jhWJxZ846jba3/yCP7SrotO8F/aNLtf+fL7T9iqC5ubHWvida3n9m6jZ3v8Ax5fbP+mHkV1PgvxHff2ZdWf9m/6b9m/5fP8Anv5H7n/0T/33W9qQsQ6p0Wi+HL62+y2dhpv2Oyrtv+FdX1z/AMf/APplZdt4rsbnTLW8sP8An2+23dn/ANsKLb4nWOnaZ/p//Lr/AKF/36p/V6RxfWaqOI8afCi+07/jw/0O9/6c/wDj3vqxNOt9btv9Dv6+jta+w+NPDF1pH/L7/wAftpeV419m9658R+6O7D4n2pqeHLb7TW34j1r7NqmlaR/y5XVtPUOnf6Npdeh6dpvhbUdM+x6/punXn/X5aVvh8P7WkcGJxPsqpzvw607/AJfL/U/+PX/Qq9EubmxttMrndO/sT/RfsH9nf+An/Xb/AO3VeufsP+i/9fP/AD6V62Hw/sqR4WJxHtavtS7bXNj/AJ/7bVBc3H2bTLr/AK+ag/0G20z/APcf9NqnufsNzpn/AO4oOEpf6dbaXa/8TL/nv/6Iqe5uP+Jpdf8AXtN/7Rq7c/Ybb7L/APIlT3NzY232r/r2/wCfSgDnbm5/4ll1/wAg6z//AH9T/wBo/wDFT3X/ACDv+Pmrv2mx/su6/wCQj/mep7a5sbnxPdUAfB/7axJ+OWg3A/i8OwH/AMjzf4180V9K/tnatZX37Sdnpmnq6voeh2lndkjhpSZboEev7ueMfhXzVQdwV9cfsMa3aQePPFXh18/6Vp0N8f8At2n/APt1fI9ez/sz+NG8C/tK+H7pi32LU86RcqFPPncRflKIZPwoA/Sf/mJ3VT/8fNQXOo/8TS6qb+0a5wIba2qjrVtff6LWr9prL1HWv/a//Pf/AONUHOT0mpVBc6jff6L/APb6Lm5vv+gbp3/kf/41XQBP/wA+v/yJUFt/yDLr/wCRP+uNT21z/wASu1/4lunf+R//AI1Rp3/L1/xTWnf58n/plSY0cF40077Nqn2yw03/AJef/RVcF8aPt2nf8VHYf8fv/tD/APe19A3P2H/l/wBNryDxH4c/tHxP9sv/APTP+nOvKPq8NiPanhttba3c6X/p+paj9trtdO07xTc+GPsen+Jf/Ayui1Hwpff2na2dhpv+hUW3gvxvbf6ZYabWJ616Jl22m+N/9F/4lunVl61ovje5+1f8g6z+1W1d7/Yvjf8A48/7N/8AJusr+xfFOo/8f+m0GH1il/dPPLnwprdt/plhqX+m1xOo6dfW2l2v/Ey/49a95/4Ry+/sv7H/AOBdcvc+HP7R+1WdbI537Kqeo+Arn7Npml3n/XCy/wDj1c7c232nVLr7B/z8z11/hy2vv+EF/sj+zfsd7a23+ifY653RdNvrbVP+3n/r2uKMR+9OHD/ui9p2nf8AHrXqP2b+zvsv/XtXE3Nz9m0u1s67251L/iZ2v/Et/wDJSeu7DbHlZiUdO/7CX/o//ptRc23/AB6/9fNGnal9p0u1/wCJb/5KT/8ATaobm5vv9F/7Yf8ALpPXQeST/Zqg+zWVH2m+/sz/AO5J6P8Aid/8uH/pJQbF25+w/wCf+u9Go/Yf9K/5CP8Ax7f8/dFz9u/sz/7k/wCm9H+nf+S3/PpQYkH/AIMf/Av/AKbzUadc/wDE0/5iP/gXV7/Tv82n/Xaue8VeKj4F8D6n4s13/jz023mvB/y7f9sP+usn+rSg2R+bHxn1e81v9oTxjf3rG5KaxNaB8YzDEfJhH/fuID8K85oPWig6Aq9a3d3p1/b3VkzWl1btlZ1PQ+tUaKAP1m8LeKtF8deG7bxZoeo40bUrecWovP8Aj4B/7+/8s/466j/7dXyP+yN47/tvwzqnwxvipXTLWa9tNoxtt5ciUHgcxyS5y7/8tv7sZr6qubb/AI9f+23/ADwrBoDVtqyrm2+0/wDkep7a5/4mn2P/AK7VR+zf8ev/AF8/9MKQB/Z19/pX/wBv/wCmNXra2vrn/wAg/wDPesvTtO/4ml1/xMv+Xn/n0g/6Y1qadbfZtL/5CX/LtQBP/Z3/AB6/9e0P/L3P/wA8KnttOsbb/P8A1xqD/P8Ax6VPbdbWgCC5tv8AiZ/Y6u6dotli1/6ev+Xyofs32nU66H7T9m/0uuE9bDHL3OnVBb2xttT+2X2pf6F/y9/8/Fbf2b7Npf8A19Vl/wBm/wDE0uv+f2g6DlrbWr658T2v2/8A5+f+PP8Az/37o1H7dbanqn/bH/P/ALUo07TvtOp/bP7N/wC3P/0T/wDZ10Vtp32nwxdfb/8Aj9+zUAeeaL/pOl/6f/n9/XeW3gvRLnVP7XsP+PL99/5Fqfw5ov8Ax9V0Xhy2/s3S/wCyP+nn/RK6DnxByFzp19p2qfY/+u9UdR0Wx/4/K6/xH1tf+vauX1rUf+JX9joMDj/7R/tHxPa3n/TzDXrH2a+ufst5Xieo/wCk/aq+V/gx498b+AtUujYanmytrn7F9jvP+PejLv3vOLMcP8B+g+nfbv8ARaLm2/8AaNZWi61Y+I/DGl6vp/8Ay9W1Xra2+0/Za7jyQudF/wCJZdVB/Yv/AGDq1fs32nTLqoLm2/6iVAEGo6L9o0y1/wCvn/2vVH7N9p/0z/iXf8sKn1K2vrn7LZ/9PP8Ay51Bc232bwxdf8hH/lh/y6f9dqDEn+zf8TS1/wCQd/nzq+bv2svFA0j4FW/hwti91zUc4xnMERExx/208k/9ta+kf9OudTtf8/8APavzZ+PfjSDxl8X7u50/UmvbHTbaGxtLj+8sYyT/AN/JZaDdI8lPWig9aKDcKKKKAPQvhZ47vfh98Q7bxBF9sSyObTUlt8/NZSjEimISIJT0kRHYJvjjzX6VXP8AYlz/AGXeWGpadef6N/ol5Z3cH+o/7+1+Sdfaf7IXxUNxp138I9f1Fc2dtNd+HyLOEZP72aaEzE5z/wAtE/7aZfaiUAfU9t9i/tS6/wCJl/y8z/8AL3UFtbf+lP8Az9/9cau3Nz/xNP8AkJf8vP8A0w/+O0W1tY/2na/8TLTv8+T/ANNa5wKVtbWNtqd1/n/lhD/0yq7p32H+y7X/AK9v+m9Ft9i/tO6/4mX+fI/660ad9h/0X/iZf8u3+f8AlrQAfaf+Jp/27f8APpRp1z/xLNL/AOnr/p0qG2trH+1P+Ql/y7f5/wCWtGnW1jbaXpVn/aX/AJN//dX/AMXQc5t/aaLm4/4ldQW3/cR/z/21qC28R6HqOqfY9P1L7ZWOIw562X4g6K2/5CdFzbf8fVQW1z/xLKntun/btXOegT/2bY1B/wAwz7H/AM/VH2n/ANKag/4+KDnLtvbfZtL+2f8AP1bVS+0/8TP/AL81PqNz/wAev/XtWJc6j9m/0yug5zL8aa19m+y15pc61/aP+h0ePfEf/Ez+yViW32K2/wBMrgxGI6HrYfDf8vSfxXrVj4c8MXWr3/8Ay618u6dc/Zq3Pif8RT468UGyscjwzaHFqDx9tn/57/8AxFcrbV9Jk+G9lS9qeTmOI9rVPsv9n3UvtPwdurP/AJ9dS/8ARteo/wDPpXyT8MfHut+C/tX2D/TLK6/4+7OvqLRfEf8Awkfhi11ew/48rr/n8tKeIw/szyTUtvsNtpl1RcVR+z339mf8w7/P/bWp/s2t/wBqWv8A18zf+1q88A/6fP8A4/VK5/5Fi6/6+f8An0n/AOe81Xfs2t/2Za1S/sXXLnTPsf8AaX/MS/6b/wDPeb/prXQYnn3x1+Il78Kfhrc+I7JWa8uf+JNahTg2U0kE3lTg/wDTPyP9X/8AHK/M2vav2hPi2vxX+LLXdlIY9C01TY6T802DCD/ryJTnfJ16L8oiDfcrxWg7gooooAKKKKACtfRtVvND8Q2urafIbW+0+4iu7c46SxMCP1GayKKAP04+Efxdsfip8M/7X04k6xbeSdVtSMfY5v8A41J/B/8AF769Iuft3/Er/wC2NfmR8Kviz4o+FviY6nojF7G54utLfi3uwOh9pEySj/wknqpZH+uYf2iH8YafbXPhXStPsLQHBVh9ouRR9X9qB79bfbf7Tuv8/wDLCqVzqNjov2X+39S06z/0b/l8u6+cda8aeKdR/wCP/wAS6j/15/a/s3/omuQ/4+K7llyOc+jdR+NHhbRf+Yl/bH+jf8uf/wBuijrg7n44+Kf9F/sDw1p1n9l/5fLy7+0/+0q4L7NZad/0+XtZdzqP2bS/7Xv9S/49f+PT/n3ro+rUgLvxF+K/im50v7HqGpfbL26/5c7P/Rrf97S+CvHh8B+KNL0cAmytfJN5j/nvL+5/9G1wXgu2/wCEi8dXXi7UP+PLTP8Aj0/67/8A2uvPviDrd8NXutHHNmRCMf8AXMYrnxK/dHRhj9QdF1H/AIldrZ1t/aftP2Wvlf8AZl8Z+KfEPhu2stfBGD9htLsjB8jyP8/vK+jbnUbG2+y2f9pfY6+bZ7yRt/abH/j81D/l6qH+0rGuWudasbn/AEyw/wCXWqPiPxH/AGLpf2ysbh9WNTUda+0/6ZXmviPxp/aOp/Y//Av/AF/2iue8R+Pf7a/0PT65a5uf+XyufEYg7cPl/Vk+o6j/AMTOvIPHvjz+2v8AinNA/wCPL/l7vP8An+ql408af21qf9kWH/Hl/wAvd5XLW1tXu5Nl3/L2ucOY5j/y5oE9rWpbW1QW1tWpbV9Kj5o3La5+zV1Hhzxp4p8OapdfYNS+x/5/541xNt/pP/brV77RWtrgfW3w5+IuieK9L+x/8S6zvf8AyXvv+uNeh18G6dbX2nf6ZYf6HXvPgL40f8euka//AKZ/6Uf/AG6vLxOX9aIHvVtXyt+1t8bf7H8M3fwm0Dcb7Ubcf2rdrdAmyh84nyP3R/1smDv8z+CX+PzPk9B+NXx98L/D74aY0HVFu/E+p20v9k2dqwm+xZIHnTE8D/vj53BT/no6fnLd3t5qmqT3d9etcXVwcz3Fwckn1JrgGkZh60UHrRQbhRRRQAUUUUAFFFFABXReGPE+oeFdVF5YsSp4uLc8BhXO0d6APqLRvFVl4i037XYggitTTv8ASdUr5g0fWL3RdRF5YnDV7JoHjnRdX8NXYOLS97Wo6H6V6uHxHtNGYNHW6jqN9rWqfY7CuJ8aXN94j8T2vhDQK1bjWjo3hm61cV0Xwx8GHTlutW1A/wCmXP8Ax9j/ANoV0iNS506y8KeBrXw7YHJr568T214X/tVujXMwz6c167qPjvRNR8cf2V/aX2y8uTj7Z/y71h+I7ax8R+J7WzsP+PL7TXn4n+Ed+GV6p7n8GNFOjfDK1vD/AKGau614r1u28T12Hhz/AIl3hi1s64/xHp32nxPa3lfAYl6n3OGw6KVt49/s7TLr/iW/bK53UfFet61ql19v/wCPK6/5c629R0Wx/wCX/UvsdYmpf2Jov+mahqWnWdJKtVOi9ELb7D/y4VwXj3xXfajqn/COWH/b3R4j8afaf9D0D/wM/wDjNcvbW32avpMuyb/l7XPm8xzH/l1QILa2+zVdtraj7NV62tq+sSPkye2tqPs32mpq1dOtvs1bAH/Htpf2OrttbVS+z1t6bRsBPbW1cn428b6L4asbmxBF1rOebY9F+vp/6HWL4w+LNnYt9j8Jn7Tdg4N+w4X/AK5f52e1eJXEzTyGc8GuDEYkaRLqGoXmpajPfX121zdTn5n65qhRRXlG4UUUUAFFFFABRRRQAUUUUAFFFFABTvmjam0UAd54d8bGHVrMeKFa+srb3GfqR/y0/Gu08Z/Eu98UJc+E/AyP9hb/AI+r3H7++9f+uUXtXiHNW4Lm7tZTdWbNb9sqa6PrDA6nwJpP9pfEWzsf7QFjz/y95G7/AKY/8D6fjXe+C7n7T470q8ryW61i71GT7XeEtd5/4+j1rrvB2v2dnqlreHUhaXlt0a65BpP94p0zow2I9kz9C9FtvtOmWteUfGjx5onw60v/AJh17rd1/wAuf/tevZfCn2G58C2ur2H/AB5XVtBe/bP+mFfnx8VvEf8Awlfxf1XxFfjUPsV0f9EP/TD/AJY/+Qq+cy/L/rNU+jxGY+zpFNvHOv6vqV1etqBu7y6OM/8ALc1Q8Razfn/RL8GzvR1qA2tnPqpurHUSD6Wlc9OMmvsOVJHzjk6pvaR4vNqDbX6/acni5J5FegaeLLUT9rsR9ssh2rxI9a7jwr4e1y3A1ew1EWeO9NHOek21tV2202uFtfiFe6PqBtdesEuyP+Xq0OCa6nT/AIk+DLhsDUPsh/6erXP8q6PrBhY3vs1H2n7NplcXrHxU0aE401TffQfZ64bWviF4k1ttiy/Y7PP/AB62vC0fWaVIEj1S/wDGOi+H2Av8Xd4Tj7LacTivKvFnxC1rxTm0J+yWPa1XpXGd80uTXl1sTUq7m4lFFFcwBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAG3o+v69oD3c+iapf6abmJrW5NpcmEvEesRPU9BUlr4p1m2kx/aLOP+no+f8AzFYFFC0A6S48T39x95bEf8BrKn1G7uT8xP4VRzRmt/rNTuBZ+1n7b9ox3zXSXnj/AFy4PyLZ2n/Xsm3+prks0Zo+sz7gXry/vNQk+1Xrb/fFUKKKwuAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//9k=" alt="Portrait of Danesh Vishnumurthy">
+    </div>
+  </div>
+</header>
+
+<div class="impact" aria-label="Impact at a glance">
+  <div class="wrap">
+    <div class="stat"><b>26</b><span>years in design, from craft to enterprise AI</span></div>
+    <div class="stat"><b>3→25</b><span>designers: Verizon CSG team grown into a global CoE</span></div>
+    <div class="stat"><b>$7M</b><span>fraud losses prevented through redesigned detection workflows</span></div>
+    <div class="stat"><b>$4.2M</b><span>saved in WIP equipment and spare procurement</span></div>
+    <div class="stat"><b>$10M</b><span>in project wins secured through design strategy</span></div>
+  </div>
+</div>
+
+<main>
+  <section class="block" id="leadership">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">What I lead</div><h2>Four things I build</h2></div>
+        <p>My work sits where design strategy meets business outcomes. These are the areas I am typically brought in to own.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <h3>Design organizations</h3>
+          <p>Hiring, scaling and running design teams across research, content, design systems and product design, with DesignOps that keep quality and speed consistent across regions.</p>
+          <div class="proof">Verizon CSG: 3 → 25, global CoE · New Relic India: research, content, DS teams</div>
+        </article>
+        <article class="pillar">
+          <h3>Design systems &amp; UX governance</h3>
+          <p>Unified design systems, governance frameworks and audit-ready processes that let large product suites look and behave as one platform.</p>
+          <div class="proof">SmartGxP unified design system · governance across 20+ enterprise apps</div>
+        </article>
+        <article class="pillar">
+          <h3>Enterprise AI experiences</h3>
+          <p>Human-centered AI, from a global HR chatbot to predictive analytics in observability to AI-assisted decisions in regulated validation workflows.</p>
+          <div class="proof">Global HR-AI chatbot · LLM Figma plugin for content review</div>
+        </article>
+        <article class="pillar">
+          <h3>Complex, regulated workflows</h3>
+          <p>Making HR, fraud, ERP, observability and life-sciences compliance software simpler, measurably faster and easier to trust.</p>
+          <div class="proof">25% faster fraud detection · 800+ users on CIO-awarded release tool</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Experience · 1997 – today</div><h2>The career thread</h2></div>
+        <p>Drawn to scale. A studio founder first, then national award-winning film VFX and international animation, then two decades of enterprise UX leadership.</p>
+      </div>
+
+      <div class="thread" aria-label="Career timeline drawn to scale, 1997 to 2026">
+        <div class="thread-inner">
+          <div class="track" id="track"></div>
+          <div class="axis" id="axis"></div>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--violet)"></i>Creative, animation &amp; film</span>
+          <span><i style="background:var(--indigo)"></i>Enterprise UX</span>
+          <span><i style="background:var(--marigold)"></i>Current</span>
+        </div>
+      </div>
+
+      <div class="roles">
+        <article class="role-item">
+          <div><div class="when">Jan 2026 – Present</div><div class="org">ValGenesis</div><div class="title">Director of UX, Design Head – Product Design <span class="tag">Now</span></div></div>
+          <div class="role-body">
+            <p>I lead the design vision for modernizing SmartGxP, the life-sciences validation and compliance platform, turning it into a scalable, platform-driven ecosystem.</p>
+            <ul>
+              <li><strong>Unified design system</strong> to give the whole SmartGxP suite one consistent, future-ready experience.</li>
+              <li><strong>Simplifying complex GxP workflows</strong> for regulated enterprise users.</li>
+              <li><strong>AI-enabled experiences</strong>: partnering with product and engineering leadership to find where AI improves decision-making, automation and usability.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role-item">
+          <div><div class="when">Sep 2024 – Jan 2026</div><div class="org">New Relic</div><div class="title">Director, Product Design</div></div>
+          <div class="role-body">
+            <p>Led product design strategy for enterprise observability, aligning UX quality with business goals.</p>
+            <ul>
+              <li><strong>Owned UX strategy and DesignOps</strong>, aligning core offerings with growth objectives and standardizing how the team worked.</li>
+              <li><strong>Thought partner in product planning</strong>, including AI-driven capabilities such as predictive analytics and intelligent automation.</li>
+              <li><strong>Managed and scaled</strong> User Research, Content Writing and Design System teams in India, in step with global design.</li>
+              <li><strong>Product-led growth</strong>: customer research programs that closed experience gaps and supported churn-reduction targets.</li>
+              <li><strong>Started an LLM-powered Figma plugin</strong> to automate content review and consistency.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role-item">
+          <div><div class="when">Jun 2014 – Sep 2024</div><div class="org">Verizon</div><div class="title">Associate Director UX · Design Head, Corporate Systems Group</div></div>
+          <div class="role-body">
+            <p>Turned UX in the Corporate Systems Group into a global Center of Excellence, with governance and end-to-end experience ownership across 20+ enterprise applications.</p>
+            <ul>
+              <li><strong>Grew the team from 3 to 25</strong> and set up systematic UX governance and audit-readiness processes.</li>
+              <li><strong>$7M in fraud losses prevented</strong> by improving fraud-detection efficiency 25%.</li>
+              <li><strong>$1.2M less WIP equipment and $3M less spare procurement</strong> through better visibility and workflow design.</li>
+              <li><strong>Global HR-AI chatbot</strong>: conceived, branded and led the experience strategy around human-centered AI principles.</li>
+            </ul>
+            <details class="more">
+              <summary>More from Verizon</summary>
+              <ul>
+                <li>Led experience design for Global HR (Level Up), Fraud Management and ERP in a large regulated environment.</li>
+                <li>Introduced a human-centered design framework that surfaced 33+ problem statements for a migration program.</li>
+                <li>Designed and launched a leadership release-tracking tool adopted by 800+ users (CIO Award).</li>
+                <li>Ran a monthly newsletter, 15+ wellness sessions and engagement initiatives across D&amp;E.</li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+        <article class="role-item">
+          <div><div class="when">Jul 2009 – Jun 2014</div><div class="org">Infosys</div><div class="title">Senior User Experience Architect</div></div>
+          <div class="role-body">
+            <p>Led UX architecture and design strategy for global enterprise clients, including high-impact work in the Retail Online Business Unit.</p>
+            <ul>
+              <li><strong>Led multidisciplinary teams</strong> through the full UX lifecycle, from research to implementation.</li>
+              <li><strong>Raised UX practice</strong> across development teams through workshops and mentoring.</li>
+              <li><strong>Marquee clients</strong> across banking, telecom, retail and aerospace in the UK, Europe and North America.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role-item">
+          <div><div class="when">Jun 2002 – Jun 2009</div><div class="org">Satyam Computer Services <span style="color:var(--muted);font-size:.7em">(now Tech Mahindra)</span></div><div class="title">Senior Consultant</div></div>
+          <div class="role-body">
+            <p>Founded and scaled the design practice in the Enterprise and Content Management business group.</p>
+            <ul>
+              <li><strong>$10M in project wins</strong> through design strategy for accounts including CITCO and Coca-Cola.</li>
+              <li><strong>Defined frameworks and methods</strong> for enterprise design work; Best Designer award, 2004 and 2006.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role-item film">
+          <div><div class="when">Nov 2000 – Jun 2002</div><div class="org">Til Studios</div><div class="title">Lead Special Effects Animator · Sr. Special Compositor (2D &amp; 3D) <span class="tag film">National Award</span></div></div>
+          <div class="role-body">
+            <p>Led 2D and 3D compositing and special effects on Indian feature films and international animation productions, managing the compositing team end to end.</p>
+            <ul>
+              <li><strong>Lead special effects animator on <em>Aalavandhan</em></strong> (Tamil) / <em>Abhay</em> (Hindi), which won the National Film Award for Best Special Effects.</li>
+              <li><strong>Feature films</strong> including <em>Aalavandhan</em> and <em>Baba</em>, covering compositing, real-time effects and VFX integration.</li>
+              <li><strong>International animation projects</strong> for DIC Entertainment (USA) and Blue Sunflower Animation (UK), delivered to international production standards.</li>
+              <li><strong>Worked alongside</strong> Academy Award winner George Merkert and Nickelodeon 2D animator Jaime Diaz.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role-item film">
+          <div><div class="when">Jul 1997 – Oct 2000</div><div class="org">Artline Graphics</div><div class="title">Co-founder &amp; Creative Head</div></div>
+          <div class="role-body">
+            <p>Co-founded a creative studio and led strategy and execution across print, product, exhibition and animation advertising.</p>
+            <ul>
+              <li><strong>Title animation for the film <em>Boys</em></strong> and multiple 3D set designs for Jaya TV and Vijay TV.</li>
+              <li><strong>Ran projects end to end</strong>, from client requirements to delivery, and served as creative head across departments.</li>
+              <li><strong>Long-term clients</strong> including MK India, Toshni-Tek, MTAB, Hotel Aadithya and Mohan Breweries.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="clients">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Selected clients</div><h2>Who I've designed for</h2></div>
+        <p>Global engagements across banking, telecom, retail, automotive, energy, animation and film, with project travel to Singapore, Canada, the UK, Ireland and Malaysia.</p>
+      </div>
+      <div class="clients">
+        <span>Royal Bank of Scotland</span><span>Citibank</span><span>Vodafone UK</span><span>TalkTalk</span><span>Dow Jones</span><span>Canadian Pacific Rail</span><span>Boeing</span><span>Nissan</span><span>Walgreens</span><span>Adidas</span><span>Reebok</span><span>Hallmark</span><span>Coca-Cola</span><span>BP</span><span>Caterpillar</span><span>CITCO</span><span>TRW</span><span>Belgacom</span><span>Bilka.dk</span><span>DIC Entertainment</span><span>Blue Sunflower Animation</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="recognition">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Recognition &amp; foundations</div><h2>Awards and education</h2></div>
+        <p>A National Film Award for special effects, and recognition for design quality, innovation and leadership across three companies.</p>
+      </div>
+      <div class="two">
+        <div>
+          <div class="sub">Awards</div>
+          <ul class="list">
+            <li class="nat"><span><b>National Film Award</b> · Best Special Effects, <em>Aalavandhan</em> (lead special effects animator)</span><span>Til Studios · 2001</span></li>
+            <li><span><b>CIO Award</b> · Release Calendar</span><span>Verizon India CSG Ideathon 2023</span></li>
+            <li><span><b>Best Performer</b> · 6+ times</span><span>Verizon Spot Award</span></li>
+            <li><span><b>Runner-up</b> · Billing System</span><span>Verizon Hackathon 2016</span></li>
+            <li><span><b>3rd place</b> · Employee Wellness</span><span>Verizon Ideathon 2021</span></li>
+            <li><span><b>Best Designer</b></span><span>Satyam · 2004 &amp; 2006</span></li>
+          </ul>
+        </div>
+        <div>
+          <div class="sub">Education</div>
+          <ul class="list">
+            <li><span><b>Master of Fine Arts</b> · Industrial Textile Design</span><span>Madras University · 2001–03</span></li>
+            <li><span><b>Bachelor of Fine Arts</b> · Industrial Textile Design</span><span>Madras University · 1993–98</span></li>
+          </ul>
+          <div class="sub" style="margin-top:36px">Giving back</div>
+          <p style="margin:0;color:var(--muted)">Volunteering lead for Verizon CSG: tree plantation and forest clean-ups, mentoring rural students for higher education and interviews, and funding education and medical assistance.</p>
+        </div>
+      </div>
+      <div class="skills">
+        <div><h4>Strategy</h4><p>Design thinking, design research &amp; strategy, information architecture, accessibility, branding and design systems</p></div>
+        <div><h4>Research</h4><p>Usability testing, competitor analysis, journey mapping, feedback analysis, cross-team collaboration</p></div>
+        <div><h4>Organization</h4><p>Design workshops, transformation initiatives, process improvement, mentoring and training, design recruitment</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="beyond">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Beyond work</div><h2>Outside the studio</h2></div>
+        <p>The same habits that make good design work: patience, endurance and attention to how things are made.</p>
+      </div>
+      <div class="beyond">
+        <div><h3>Avid hiker &amp; trekker</h3><p>Reached Everest Base Camp in 2023, and keeps planning the next trail.</p></div>
+        <div><h3>Marathon runner &amp; road cyclist</h3><p>Runs marathons and rides regularly.</p></div>
+        <div><h3>Yoga practitioner &amp; trainer</h3><p>Has led many yoga sessions at work and outside it, including awareness programs for children in schools.</p></div>
+        <div><h3>Vintage machines</h3><p>Collector of vintage bikes and cars, and antique brass.</p></div>
+        <div><h3>Learning the flute</h3><p>Currently a beginner.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--marigold)">Contact</div>
+    <h2 style="margin-top:14px">Let's connect.</h2>
+    <p class="cline">
+      <a class="vlink" href="mailto:daneshv@gmail.com">daneshv@gmail.com</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span>+91 94440 33497</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a class="vlink" href="https://www.linkedin.com/in/danesh-vishnumurthy-6190673/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </p>
+    <div class="foot"><span>Danesh Vishnumurthy · Chennai, Tamil Nadu, India</span><a href="#top" style="text-decoration:none">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Career thread, to scale: decimal years
+  var roles=[
+    {n:"Artline",s:1997.5,e:2000.83,c:"craft"},
+    {n:"Til Studios",s:2000.83,e:2002.45,c:"craft"},
+    {n:"Satyam",s:2002.45,e:2009.5},
+    {n:"Infosys",s:2009.5,e:2014.45},
+    {n:"Verizon",s:2014.45,e:2024.7},
+    {n:"New Relic",s:2024.7,e:2026.05},
+    {n:"ValGenesis",s:2026.05,e:2026.85,c:"now"}
+  ];
+  var min=1997, max=2027, span=max-min;
+  var track=document.getElementById('track'), axis=document.getElementById('axis');
+  roles.forEach(function(r){
+    var d=document.createElement('div');
+    d.className='seg'+(r.c?' '+r.c:'');
+    d.style.left=((r.s-min)/span*100)+'%';
+    d.style.width=((r.e-r.s)/span*100)+'%';
+    d.title=r.n;
+    var w=(r.e-r.s);
+    d.textContent = w>=1.5 ? r.n : '';
+    track.appendChild(d);
+  });
+  [1997,2002,2007,2012,2017,2022,2027].forEach(function(y){
+    var s=document.createElement('span');s.style.left=((y-min)/span*100)+'%';s.textContent=y;axis.appendChild(s);
+  });
+  // Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-copy')), t=el.textContent.trim();
+      var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1600)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy'},1600)};
+      try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
